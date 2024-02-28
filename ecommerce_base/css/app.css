@@ -1,0 +1,265 @@
+/*Para concretar las medidas que queremos y no nos afecte lo que tienen los navegadores por defecto. Hacer siempre.*/
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, 
+  *:after {
+    box-sizing: inherit;
+  }
+
+/*Globales*/
+
+body { /*Aquí se escribe la fuente para toda la página*/
+    font-family: "Raleway", sans-serif; /*con la coma se separan todos los font family. Si por lo que sea no carga el primero, carga el segundo*/
+}
+
+img {
+    max-width: 100%; /*para que no ocurra el desbordamiento de imágenes. Para que la imagen coja el 100% del contenedor en el que esta*/
+    display: block; /*para que donde haya fotos pille el 100% del contenedor. Por defecto una imagen es inline. De ese modo es elemento de bloque.*/
+}
+
+h1, h2, h3 {
+    font-family: "Playfair Display", self;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+h3 {
+    font-size: 30px;
+    margin: 0 0 5px 0;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.contenedor { /*para darle estos atributos a ciertos contenedores que creemos*/
+    max-width: 1200px;
+    margin-inline: auto; /*Si en ese contenedor hay varios bloques, deja un margen inline (hacia derecha e izquierda dentro de ese contenedor)*/
+}
+
+.btn {
+    background-color: #8cbc00;
+    display: block;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding: 10px;
+    transition: background-color ,3s ease-out;
+}
+
+.btn:hover {
+    background-color: #769c02;
+}
+
+/*Cabecera*/
+
+.nombre-sitio {
+    color: rgba(0,0,0,1);
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.nombre-sitio span {
+    color: #037bc0;
+}
+
+.nav-principal {
+    /*border-top-style: solid;
+    border-width: 1px;
+    border-color: #e1e1e1;*/
+    padding: 20px 0 20px 0; /*Tres valores para definir los 4 lados en sentido de las agujas del reloj*/
+    display: flex; /*por defecto lo hace en horizontal*/
+    justify-content: space-between; /*pone todos los enlaces distribuidos con el mismo espacio entre ellas.*/
+}
+
+.contenedor-navegacion {
+    border-top: 1px solid #e1e1e1; /*Esta línea engloba las 3 de nav principal*/
+}
+
+.hero { /*Para poner una imagen de fondo se suele usar la clase hero en un div*/
+    background-image: url('../img/principal.jpg');
+    background-repeat: no-repeat; /*Si no ponemos esto, por defecto en una pantalla grande, si la imagen no curre toda la pantalla, se repite la imagen muchas veces hasta llenar toda la imagen*/
+    background-size: cover; /*para adaptar la imagen al tamaño del contenedor*/
+    background-position: center center;
+    height: 550px;
+}
+
+/*Categorias*/
+
+.listado-categorias {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /*Se divide en 3 y se les da la misma fraccion a todos*/
+    gap: 20px; /*Es una propiedad de grid (es como el margin)*/
+}
+
+.categorias {
+    padding-top: 50px;
+}
+
+.categorias h2 {
+    text-align: center;
+}
+
+.categorias a {
+    text-align: center;
+    display: block; /*Lo convierte en bloque y lo centra los enlaces*/
+    padding: 20px;
+    font-size: 20px;
+}
+
+.categorias a:hover { /*Hover es para el evento al poner encima el ratón*/
+    background-color: #037bc0;
+    color: white;
+    border-bottom-right-radius: 10px; /*para redondear la esquina de abajo a la izquierda*/
+}
+
+.sobre-nosotros {
+    display: flex;
+    height: 600px;
+}
+
+.box-1 {
+    background-image: url('../img/nosotros.jpg');
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-basis: 50%; /*para que este div ocupe el 50%, ya que el padre es flex*/
+}
+
+.box-2 {
+    background-color: #037bc0;
+    color: white;
+    text-align: justify;
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 100px;
+}
+
+/*Main*/
+
+.contenido-principal {
+    padding-top: 50px;
+}
+
+.producto {
+    background-color: #037bc0;
+}
+
+.info-producto {
+    text-align: center;
+    color: white;
+    padding: 25px;
+}
+
+.info-producto p {
+    margin: 0 0 5px 0;
+}
+
+.info-producto h3 {
+    margin: 0;
+}
+
+.precio {
+    font-size: 28px;
+    font-weight: 900;
+}
+
+.listado-productos {
+    display: grid;
+    /*grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;*/
+    grid-template-columns: repeat(6, 1fr); /*esto es lo mismo que lo de arriba*/
+    column-gap: 20px;
+    row-gap: 20px;
+}
+
+.producto:nth-child(1) { /*Para seleccionar el primer elemento de losarticulos con clase productos*/
+    grid-column-start: 1;
+    grid-column-end: 7;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.producto:nth-child(1) img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /*para que la foto no se vea como el culo*/
+}
+
+.producto:nth-child(2) {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+.producto:nth-child(3) {
+    grid-column-start: 4;
+    grid-column-end: 7;
+}
+
+.producto:nth-child(2) img,
+.producto:nth-child(3) img {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.producto:nth-child(4) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.producto:nth-child(5) {
+    grid-column-start: 3;
+    grid-column-end: 5;
+}
+
+.producto:nth-child(6) {
+    grid-column-start: 5;
+    grid-column-end: 7;
+}
+
+.producto:nth-child(4) img,
+.producto:nth-child(5) img,
+.producto:nth-child(6) img {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.grid-footer {
+    display: flex;
+    flex-direction: row;
+    padding: 40px 20px 20px 20px;
+    border-top: 1px solid #e1e1e1;
+
+}
+
+.grid-footer div {
+    /*flex-basis:33.33%; para dar a cada hijo el 33,3% del espacio*/
+    flex: 1; /*para darles a cada div hijo el mismo tamaño*/
+}
+
+.grid-footer h3 {
+    font-size: 20px;
+    text-align: center;
+}
+
+.footer-navegacion {
+    height: 200px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+}

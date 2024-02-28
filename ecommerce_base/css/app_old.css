@@ -1,0 +1,58 @@
+/*Para concretar las medidas que queremos y no nos afecte lo que tienen los navegadores por defecto. Hacer siempre.*/
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, 
+  *:after {
+    box-sizing: inherit;
+  }
+
+/*Globales*/
+
+h1 {
+    font-size: 20px;
+}
+
+h1 span { /*Se le aplica el color a lo que está dentro del span del h1*/
+    color: #037bc0;
+}
+
+/*
+nav a{  Para todas las a (enlaces) de todos los nav
+    text-transform: uppercase;  convertir todo en mayúscula
+}*/
+
+/*nav a:nth-child(2) { el segundo elemento de todos los a de cada nav se pone en mayúsculas
+    text-transform: uppercase; 
+}*/
+
+/*Cabecera*/
+
+nav a { /*hace referencia a todos los a de todos los nav*/
+    text-transform: uppercase;
+}
+
+#navegacion a { /*hace referencia al id*/
+    text-transform: capitalize;
+}
+
+.navegacion a {
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none; /*En los enlaces sale el típico subrayado. Se quita con esta propiedad*/
+    color: #037bc0;
+}
+
+.sobre-nosotros {
+    background-color: red;
+    width: 200px;
+    padding: 25px;
+    margin-top: 100px;
+    box-sizing: border-box; /*El box sizing coge el valor de content box por defecto. Si lo ponemos en border box adapta el contenido a lo alto para mantener el width que le ponemos*/
+}
+
+.sobre-empresa {
+    background-color: blue;
+    width: 500px;
+    padding: 100px; /*Margen interno, hacia dentro del elemento.*/
+}
