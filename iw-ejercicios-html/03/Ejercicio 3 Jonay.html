@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3 Jonay</title>
+</head>
+<body>
+    <h1>Reserva de sociedad</h1>
+    <p>Rellena el siguiente formulario para reservar la sociedad para un día en concreto</p>
+    <form action="#" method="post">
+        <fieldset>
+            <legend>Datos del usuario</legend>
+            <label for="campo-nombre">Nombre</label>
+            <input id="campo-nombre" type="text" name="nombre"><br>
+            <br>
+            <label for="campo-socio">¿Eres socio?</label><br>
+            <br>
+            <input type="radio" name="campo-socio" value="socio" checked="checked">Sí, soy socio
+            <input type="radio" name="campo-socio" value="no-socio">No soy socio<br>
+            <br>
+            <label for="campo-email">Email</label>
+            <input id="campo-email" type="text" name="email"><br>
+            <br>
+            <label for="campo-contrasena">Contraseña</label>
+            <input type="password" name="contrasena" id="campo-contrasena"><br>
+            <br>
+        </fieldset>
+        <fieldset>
+            <legend>Datos de la reserva</legend>
+            <label for="campo-edad">Edad</label>
+            <select id="campo-edad" name="edad"> 
+                <option value="mayor_18" selected="mayor_18">Mayor de 18 años</option>
+                <option value="menor_18">Menor de 18 años</option>
+            </select><br>
+            <br>
+            <label for="campo-fecha-hora">Selecciona la fecha y hora de reserva</label><br>
+            <br>
+            <input type="date" id="campo-fecha" name="fecha">
+            <input type="time" id="campo-hora" name="hora"><br>
+            <br>
+            <textarea name="comentarios" cols="20" rows="7">Comentrios</textarea><br>
+            <br>
+        </fieldset>
+        <br>
+        <input type="checkbox" name="condiciones" id="aceptar-condiciones">
+        <label for="aceptar-condiciones">Acepto las condiciones</label><br>
+        <br>
+        <input type="submit">
+    </form>
+</body>
+</html>
