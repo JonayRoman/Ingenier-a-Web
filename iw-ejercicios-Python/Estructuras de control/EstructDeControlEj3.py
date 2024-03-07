@@ -1,0 +1,1 @@
+#Mejora el programa anterior para que muestre por separado la suma de los números pares y los impares.
