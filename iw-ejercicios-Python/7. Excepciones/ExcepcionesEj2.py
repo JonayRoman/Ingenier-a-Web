@@ -1,0 +1,2 @@
+#Crea una aplicación reciba la clave de un diccionario y acceda a uno de sus valores. Asegúrate de que capturas 
+# las excepciones que puedan saltar al intentar acceder a una clave del diccionario inexistente.
