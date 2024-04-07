@@ -3,10 +3,17 @@
 # siendo X el número de intentos restantes. Tras el tercer fallo el programa mostrará el mensaje "Has agotado 
 # todos tus intentos." y finalizará.
 
-usuario = input("Introduce el nombre de usuario: ")
-clave = input("Introduce la contraseña: ")
+contador = 3
+while contador != 0:
+    usuario = input("Introduce el nombre de usuario: ")
+    clave = input("Introduce la contraseña: ")
 
-if usuario == "root" and clave == "root":
-    print("¡Bienvenido!")
+    if usuario != "root" or clave != "root":
+        contador = contador - 1
+        if contador != 0:
+            print(f"Datos incorrectos. Le quedan {contador} intentos")
+    else:
+        print("¡Bienvenido!")
+        break
 else:
-    print("Acceso fallido")
+    print("Has agotado todos tus intentos.")

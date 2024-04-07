@@ -6,4 +6,5 @@ num_2 = int(input("Introduce el segundo numero: "))
 
 for i in range(num_1, num_2 + 1):
     total = 0
-    total = total + i
+    total = total + num_1 + num_2
+    print(total)
